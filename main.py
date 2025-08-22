@@ -9,7 +9,7 @@ paTimeData = tda.preAnalysis(timeData)
 dowTData = tda.timeAnalysisDOW(paTimeData)
 timeTData = tda.timeAnalysisTime(paTimeData)
 dowBusData = bsda.busStopAnalysisDOW()
-timeBusData = bsda.busStopAnalysisRoute()
+routeBusData = bsda.busStopAnalysisRoute()
 
 #testSample1
 """
@@ -42,16 +42,16 @@ print("데이터 출력:")
 dowBusData.printDivData("dayOfWeek")
 
 print("노선별 분석 평균:")
-print(timeBusData.Mean)
+print(routeBusData.Mean)
 print("노선별 분석 표준편차:")
-print(timeBusData.Std)
+print(routeBusData.Std)
 print("노선별 분석 데이터:")
-print(timeBusData.divData)
-timeBusData.printDivData("routeName")
+print(routeBusData.divData)
+routeBusData.printDivData("routeName")
 """
 #testSample3
 
 pa.patternAnalysis(dowBusData, "dayOfWeek")
-pa.patternAnalysis(timeBusData, "priceType")
+pa.patternAnalysis(routeBusData, "priceType")
 pa.patternAnalysis(dowTData, "dayOfWeek")
 pa.patternAnalysis(timeTData, "baseHour")
