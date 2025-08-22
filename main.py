@@ -1,7 +1,7 @@
 import pandas as pd
-import Analysis.analysisBase as ab
 import Analysis.timeData as tda
 import Analysis.busStopData as bsda
+import Analysis.patternAnalyze as pa
 
 timeData = pd.read_csv('csvData/time_data.csv', skiprows=1)
 
@@ -31,6 +31,7 @@ print(timeTData.divData)
 timeTData.printDivData("baseHour")
 """
 #testSample2
+"""
 print("요일별 분석 평균:")
 print(dowBusData.Mean)
 print("요일별 분석 표준편차:")
@@ -47,3 +48,10 @@ print(timeBusData.Std)
 print("노선별 분석 데이터:")
 print(timeBusData.divData)
 timeBusData.printDivData("routeName")
+"""
+#testSample3
+
+pa.patternAnalysis(dowBusData, "dayOfWeek")
+pa.patternAnalysis(timeBusData, "priceType")
+pa.patternAnalysis(dowTData, "dayOfWeek")
+pa.patternAnalysis(timeTData, "baseHour")
